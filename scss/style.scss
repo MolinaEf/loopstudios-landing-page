@@ -28,6 +28,23 @@ html,   body{
     transform: translateX(0%) !important;
 }
 
+.desktop-only{
+    display: none;
+    @include large-screen{
+        display: block
+    }
+}
+
+.mobile-only{
+    @include large-screen{
+        display: none !important
+    }
+}
+
+.text--no-margin{
+    margin-top: 0 !important;
+}
+
 
 .hero{
     background-image: url("../images/mobile/image-hero.jpg");
@@ -265,6 +282,8 @@ html,   body{
         }
     }
 
+
+
     &__desc{
         font-family: 'Alata', sans-serif;
         font-size: 1.05rem;
@@ -289,6 +308,15 @@ html,   body{
         gap: 1.5rem;
         margin-top: 2.5rem;
 
+        @include large-screen{
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-template-rows: 30rem 30rem;
+            grid-auto-rows: 30rem;
+            max-width: 1050px;
+            width: 100%;
+            margin-block: 5rem 4rem;
+        }
+
         &__item{
             font-size: 1.8rem;
             display: flex;
@@ -301,6 +329,11 @@ html,   body{
             position: relative;
             z-index: 1;
             transition: color 0.3s ease-in-out;
+
+            @include large-screen{
+                padding: 2.2rem 2.2rem 2.2rem 2.2rem;
+                font-size: 2.3rem;
+            }
         
             &::before{
                 content: "";
@@ -330,6 +363,14 @@ html,   body{
                     rgba(0, 0, 0, 0.65),
                     rgba(0, 0, 0, 0)),
                     url("../images/mobile/image-deep-earth.jpg") ;
+
+                @include large-screen{
+                    background-image: linear-gradient(
+                        to top,
+                        rgba(0, 0, 0, 0.65),
+                        rgba(0, 0, 0, 0)),
+                        url("../images/desktop/image-deep-earth.jpg");
+                }
             }
             &__night-arcade{
                 background-image: linear-gradient(
@@ -337,6 +378,14 @@ html,   body{
                     rgba(0, 0, 0, 0.65),
                     rgba(0, 0, 0, 0)),
                     url("../images/mobile/image-night-arcade.jpg") ;
+                
+                @include large-screen{
+                    background-image: linear-gradient(
+                        to top,
+                        rgba(0, 0, 0, 0.65),
+                        rgba(0, 0, 0, 0)),
+                        url("../images/desktop/image-night-arcade.jpg")
+                }
             }
             &__soccer-team-vr{
                 background-image: linear-gradient(
@@ -344,6 +393,13 @@ html,   body{
                     rgba(0, 0, 0, 0.65),
                     rgba(0, 0, 0, 0)),
                      url("../images/mobile/image-soccer-team.jpg");
+                @include large-screen{
+                    background-image: linear-gradient(
+                        to top,
+                        rgba(0, 0, 0, 0.65),
+                        rgba(0, 0, 0, 0)),
+                        url("../images/desktop/image-soccer-team.jpg")
+                }
             }
             &__the-grid{
                 background-image: linear-gradient(
@@ -352,6 +408,14 @@ html,   body{
                     rgba(0, 0, 0, 0)),
                      url("../images/mobile/image-grid.jpg");
                 padding-right: 60%;
+
+                @include large-screen{
+                    background-image: linear-gradient(
+                        to top,
+                        rgba(0, 0, 0, 0.65),
+                        rgba(0, 0, 0, 0)),
+                        url("../images/desktop/image-grid.jpg")
+                }
             }
             &__from-up-above-vr{
                 background-image: linear-gradient(
@@ -359,6 +423,13 @@ html,   body{
                     rgba(0, 0, 0, 0.65),
                     rgba(0, 0, 0, 0)),
                      url("../images/mobile/image-from-above.jpg");
+                @include large-screen{
+                background-image: linear-gradient(
+                    to top,
+                    rgba(0, 0, 0, 0.65),
+                    rgba(0, 0, 0, 0)),
+                    url("../images/desktop/image-from-above.jpg")
+                }
             }
             &__pocket-borealis{
                 background-image: linear-gradient(
@@ -366,6 +437,13 @@ html,   body{
                     rgba(0, 0, 0, 0.65),
                     rgba(0, 0, 0, 0)),
                      url("../images/mobile/image-pocket-borealis.jpg") ;
+                @include large-screen{
+                background-image: linear-gradient(
+                    to top,
+                    rgba(0, 0, 0, 0.65),
+                    rgba(0, 0, 0, 0)),
+                    url("../images/desktop/image-pocket-borealis.jpg")
+                    }
             }
             &__the-curiosity{
                 background-image: linear-gradient(
@@ -373,6 +451,13 @@ html,   body{
                     rgba(0, 0, 0, 0.65),
                     rgba(0, 0, 0, 0)),
                      url("../images/mobile/image-curiosity.jpg");
+                @include large-screen{
+                background-image: linear-gradient(
+                    to top,
+                    rgba(0, 0, 0, 0.65),
+                    rgba(0, 0, 0, 0)),
+                    url("../images/desktop/image-curiosity.jpg")
+            }
             }
             &__make-it-fisheye{
                 background-image: linear-gradient(
@@ -380,6 +465,13 @@ html,   body{
                     rgba(0, 0, 0, 0.65),
                     rgba(0, 0, 0, 0)),
                      url("../images/mobile/image-fisheye.jpg") ;
+                @include large-screen{
+                    background-image: linear-gradient(
+                        to top,
+                        rgba(0, 0, 0, 0.65),
+                        rgba(0, 0, 0, 0)),
+                        url("../images/desktop/image-fisheye.jpg")
+                    }
             }
         }
     }
@@ -396,6 +488,11 @@ html,   body{
         display: block;
         transition: background-color .3s ease-in-out, color .3s ease-in-out;
 
+        @include large-screen{
+            margin:0;
+            line-height: 1.5;
+        }
+
         &:hover{
             background-color: $black;
             color: $white;
@@ -404,20 +501,51 @@ html,   body{
     }
 }
 
+.section-2{
+
+    @include large-screen{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__top-layer{
+        @include large-screen{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+}
+
 .footer{
     background-color: $black;
     padding: 2rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-start;
     color: $white;
     font-family: 'Alata', sans-serif;
     font-weight: 300;
 
+    @include large-screen{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding-inline: calc(18vw - 8rem);
+        }
+    
+
     &__logo{
         margin: 2rem 0;
-        transform: scale(.8)
+        transform: scale(.8);
+
+        @include large-screen{
+            margin: 1rem 0 1.5rem 0;
+            width: 50%;
+            transform: scale(1);
+        }
     }
 
     &__nav-item{
@@ -451,6 +579,11 @@ html,   body{
         align-items: center;
         justify-content: center;
         margin-top: 2rem;
+
+        @include large-screen{
+            justify-content: flex-end;
+            margin-top:.5rem
+        }
 
         &__icon-container{
             position: relative;
@@ -489,5 +622,34 @@ html,   body{
         font-size: 1rem;
         color: $dark-gray;
         margin: 1.5rem 0 2rem 0;
+
+        @include large-screen{
+            margin: 0;
+        }
     }
-}
+
+    &__left{
+        @include large-screen{
+        flex-direction: column;
+        display: flex;
+        align-items: flex-start;
+    }}
+
+    &__right{
+        @include large-screen{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 1rem;
+        }}
+    
+
+    &__nav-list{
+        @include large-screen{
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            gap: 2rem;
+            font-size: 1.7rem;
+        }}
+    }
